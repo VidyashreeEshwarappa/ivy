@@ -3,9 +3,11 @@ sort
 
 .. autofunction:: ivy.functional.ivy.sorting.sort
 
-.. autofunction:: ivy.container.container_methods.static_sort
+.. autofunction:: ivy.array.array_methods.sort
 
 .. autofunction:: ivy.container.container_methods.sort
+
+.. autofunction:: ivy.container.container_methods.static_sort
 |
 | **Supported Frameworks:**
 
@@ -33,6 +35,7 @@ sort
    :caption: sort
 
    sort/sort_functional.rst
+   sort/sort_array.rst
    sort/sort_container.rst
    sort/static_sort_container.rst
 
