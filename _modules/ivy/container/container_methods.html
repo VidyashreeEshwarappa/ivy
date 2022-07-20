@@ -80,13 +80,13 @@
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -4127,7 +4127,7 @@
     <span class="k">pass</span></div>
 
 
-<span class="k">def</span> <span class="nf">static_sort</span><span class="p">(</span>
+<div class="viewcode-block" id="static_sort"><a class="viewcode-back" href="../../../functional/ivy/sorting/sort/static_sort_container.html#ivy.container.container_methods.static_sort">[docs]</a><span class="k">def</span> <span class="nf">static_sort</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
     <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">descending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -4139,10 +4139,38 @@
     <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
-    <span class="k">pass</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            ivy.Container static method variant of ivy.add. This method simply wraps the</span>
+<span class="sd">            function, and so the docstring for ivy.add also applies to this method</span>
+<span class="sd">            with minimal changes.</span>
+
+<span class="sd">            Examples</span>
+<span class="sd">            --------</span>
+<span class="sd">            With one :code:`ivy.Container` input:</span>
+
+<span class="sd">            &gt;&gt;&gt; x = ivy.Container(a=ivy.array([5, 9, 0.2]),\</span>
+<span class="sd">                          b=ivy.array([[8, 1], [5, 0.8]]))</span>
+<span class="sd">            &gt;&gt;&gt; y = ivy.Container.static_sort(x)</span>
+<span class="sd">            &gt;&gt;&gt; print(y)</span>
+<span class="sd">            {</span>
+<span class="sd">                a: ivy.array([0.2, 5., 9.]),</span>
+<span class="sd">                b: ivy.array([[1., 8.], [0.8, 5.]])</span>
+<span class="sd">            }</span>
+
+<span class="sd">            &gt;&gt;&gt; x = ivy.Container(a=ivy.array([8, 0.5, 6]),\</span>
+<span class="sd">                          b=ivy.array([[9, 0.7], [0.4, 0]]))</span>
+<span class="sd">            &gt;&gt;&gt; y = ivy.Container.static_sort(x)</span>
+<span class="sd">            &gt;&gt;&gt; print(y)</span>
+<span class="sd">            {</span>
+<span class="sd">                a: ivy.array([0.5, 6., 8.]),</span>
+<span class="sd">                b: ivy.array([[0.7, 9.], [0., 0.4]])</span>
+<span class="sd">            }</span>
+
+<span class="sd">            &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
 
 
-<span class="k">def</span> <span class="nf">sort</span><span class="p">(</span>
+<div class="viewcode-block" id="sort"><a class="viewcode-back" href="../../../functional/ivy/sorting/sort/sort_container.html#ivy.container.container_methods.sort">[docs]</a><span class="k">def</span> <span class="nf">sort</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
     <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">descending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -4154,104 +4182,6 @@
     <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
-    <span class="k">pass</span>
-
-
-<div class="viewcode-block" id="sort"><a class="viewcode-back" href="../../../functional/ivy/sorting/sort/sort_container.html#ivy.container.container_methods.sort">[docs]</a><span class="k">def</span> <span class="nf">sort</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
-        <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">descending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">stable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="o">*</span><span class="p">,</span>
-        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ivy.Container instance method variant of ivy.sort. This method simply wraps the</span>
-<span class="sd">    function, and so the docstring for ivy.sort also applies to this method</span>
-<span class="sd">    with minimal changes.</span>
-
-<span class="sd">    Instance Method Examples</span>
-<span class="sd">    ------------------------</span>
-<span class="sd">    With：code:`ivy.Container` inputs:</span>
-
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([5, 9, 0.2]), b=ivy.array([8, 1]))</span>
-<span class="sd">    &gt;&gt;&gt; y = x.sort()</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    {</span>
-<span class="sd">        a: ivy.array([0.2, 5., 9.]),</span>
-<span class="sd">        b: ivy.array([1, 8])</span>
-<span class="sd">    }</span>
-
-<span class="sd">    &gt;&gt;&gt;x = ivy.Container(a=ivy.array([5, 9, 0.2]), b=ivy.array([[8, 1], [5, 0.8]]))</span>
-<span class="sd">    &gt;&gt;&gt;y = x.sort()</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    { a: ivy.array([0.2, 5., 9.]), \</span>
-<span class="sd">      b: ivy.array([[1., 8.],[0.8, 5.]])</span>
-<span class="sd">    }</span>
-
-<span class="sd">    Static Method Examples</span>
-<span class="sd">    ----------------------</span>
-
-<span class="sd">    With：code:`ivy.Container` inputs:</span>
-
-<span class="sd">    &gt;&gt;&gt;x = x = ivy.Container(a=ivy.array([8, 0.5, 6]),b=ivy.array([[9, 0.7], [0.4, 0]]))</span>
-<span class="sd">    &gt;&gt;&gt;y = ivy.sort(x)</span>
-<span class="sd">    &gt;&gt;&gt;print(y)</span>
-<span class="sd">    {</span>
-<span class="sd">        a: ivy.array([0.5, 6., 8.]),</span>
-<span class="sd">        b: ivy.array([[0.7, 9.],\</span>
-<span class="sd">                        [0., 0.4]])</span>
-<span class="sd">    }</span>
-
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([8, 0.5, 6]), b=ivy.array([[9, 0.7], [0.4, 0]]))</span>
-<span class="sd">    &gt;&gt;&gt; y = ivy.sort(x)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    {</span>
-<span class="sd">        a: ivy.array([0.5, 6., 8.]),</span>
-<span class="sd">        b: ivy.array([[0.7, 9.],</span>
-<span class="sd">              [0., 0.4]])</span>
-<span class="sd">    }</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span></div>
-
-
-<div class="viewcode-block" id="static_sort"><a class="viewcode-back" href="../../../functional/ivy/sorting/sort/static_sort_container.html#ivy.container.container_methods.static_sort">[docs]</a><span class="k">def</span> <span class="nf">static_sort</span><span class="p">(</span>
-        <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
-        <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">descending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">stable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="o">*</span><span class="p">,</span>
-        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ivy.Container static method variant of ivy.add. This method simply wraps the</span>
-<span class="sd">    function, and so the docstring for ivy.add also applies to this method</span>
-<span class="sd">    with minimal changes.</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    With one :code:`ivy.Container` input:</span>
-
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([5, 9, 0.2]),\</span>
-<span class="sd">                  b=ivy.array([[8, 1], [5, 0.8]]))</span>
-<span class="sd">    &gt;&gt;&gt; y = ivy.Container.static_sort(x)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    {</span>
-<span class="sd">        a: ivy.array([0.2, 5., 9.]),</span>
-<span class="sd">        b: ivy.array([[1., 8.], [0.8, 5.]])</span>
-<span class="sd">    }</span>
-
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([8, 0.5, 6]),\</span>
-<span class="sd">                  b=ivy.array([[9, 0.7], [0.4, 0]]))</span>
-<span class="sd">    &gt;&gt;&gt; y = ivy.Container.static_sort(x)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    {</span>
-<span class="sd">        a: ivy.array([0.5, 6., 8.]),</span>
-<span class="sd">        b: ivy.array([[0.7, 9.], [0., 0.4]])</span>
-<span class="sd">    }</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
 
